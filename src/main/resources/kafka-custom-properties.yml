@@ -1,0 +1,6 @@
+management:
+  endpoint:
+    health:
+      group:
+        liveness:
+          include: livenessState, binders

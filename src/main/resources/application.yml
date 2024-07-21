@@ -1,0 +1,29 @@
+spring:
+  application:
+   name: 'cloud-stream'
+
+  cloud:
+    function:
+      definition:
+    stream:
+      kafka:
+        default:
+          consumer:
+            #kafa is nonsense you have to have custom dlq management
+            enable-dlq: true
+        binder:
+          auto-create-topics: true
+          auto-add-partitions: true
+          enable-observation: true
+      function:
+        bindings:
+          testConsumer-in-0: testConsumerInput
+      bindings:
+        testConsumerInput:
+          destination: test-topic
+          group: test-group
+          consumer:
+            concurrency: 1
+            partitioned: true
+        testEventOutput:
+          destination: test-topic
