@@ -15,6 +15,7 @@ spring:
           auto-create-topics: true
           auto-add-partitions: true
           enable-observation: true
+          brokers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
       function:
         bindings:
           testConsumer-in-0: testConsumerInput

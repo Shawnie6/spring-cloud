@@ -11,7 +11,7 @@ public abstract class AbstractPublisher<EVENT> implements EventPublisher<EVENT> 
     private final String bindingName;
 
     public void publish(EVENT event){
-        log.debug("publishing message {} to binding {}", event, bindingName);
+        log.info("publishing message {} to binding {}", event, bindingName);
         streamBridge.send(bindingName, event);
     }
 }

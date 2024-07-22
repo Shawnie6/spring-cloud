@@ -11,6 +11,6 @@ import java.util.function.Consumer;
 public class testConsumer implements Consumer<TestDto> {
     @Override
     public void accept(TestDto testDto) {
-        log.debug("Wow we got a message {}", testDto);
+        log.info("Wow we got a message {}", testDto);
     }
 }
